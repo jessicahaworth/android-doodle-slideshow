@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, GroupProjectActivity!</string>
+    <string name="hello">Hello World, GroupProjectActivity! Is GIT working, or no?</string>
     <string name="app_name">GroupProject</string>
 
 </resources>
