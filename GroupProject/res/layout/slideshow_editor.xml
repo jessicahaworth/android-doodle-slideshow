@@ -16,11 +16,11 @@
          android:layout_height="match_parent" android:layout_weight="1"
          android:drawableTop="@drawable/ic_menu_gallery"
          android:text="@string/button_add_picture"></Button>
-      <Button android:id="@+id/addMusicButton"
+      <Button android:id="@+id/addDrawingButton"
          android:layout_width="wrap_content"
          android:layout_height="match_parent" android:layout_weight="1"
          android:drawableTop="@drawable/ic_menu_add"
-         android:text="@string/button_add_music"></Button>
+         android:text="@string/button_add_drawing"></Button>
       <Button android:id="@+id/playButton"
          android:layout_width="wrap_content"
          android:layout_height="match_parent" android:layout_weight="1"

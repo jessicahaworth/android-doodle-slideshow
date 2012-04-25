@@ -17,7 +17,7 @@
    <string name="button_play">Play</string>
    <string name="button_add_picture">Add Picture</string>   
    <string name="button_take_picture">Take Picture</string>   
-   <string name="button_add_music">Add Music</string>   
+   <string name="button_add_drawing">Add Drawing</string>   
    <string name="button_add_video">Add Video</string>   
    <string name="button_done">Done</string>   
    <string name="button_delete">Delete</string>
@@ -36,6 +36,6 @@
       Error writing to file. Slideshows not saved.</string>
    <string name="chooser_image">Select image</string>
    <string name="chooser_video">Select video</string>
-   <string name="chooser_music">Select music</string>
+   <string name="chooser_music">Select drawing type</string>
 </resources>
 
