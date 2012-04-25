@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:id="@+id/slideshowListItemLinearLayout"
+   android:layout_width="match_parent" 
+   android:layout_height="match_parent"
+   android:orientation="vertical">
+   <TextView android:id="@+id/nameTextView" 
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" android:layout_margin="8dp" 
+      android:textStyle="bold" android:textSize="18sp">
+   </TextView>
+   <LinearLayout android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+      <ImageView android:id="@+id/slideshowImageView"
+         android:layout_width="75dp" android:layout_height="75dp"
+         android:layout_gravity="center_vertical"
+         android:layout_margin="5dp"></ImageView>
+      <LinearLayout android:layout_height="wrap_content" 
+         android:layout_width="match_parent"
+         android:layout_gravity="center_vertical">
+         <Button android:id="@+id/playButton" android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" 
+            android:text="@string/button_play"
+            android:drawableTop="@drawable/ic_menu_play_clip"></Button>
+         <Button android:id="@+id/editButton" android:layout_weight="1"
+            android:layout_width="wrap_content" 
+            android:layout_height="match_parent"
+            android:text="@string/button_edit"
+            android:drawableTop="@drawable/ic_menu_edit"></Button>
+         <Button android:id="@+id/deleteButton" android:layout_weight="1"
+            android:layout_width="wrap_content" 
+            android:layout_height="match_parent"
+            android:text="@string/button_delete"
+            android:drawableTop="@drawable/ic_menu_delete"></Button>
+      </LinearLayout>
+   </LinearLayout>
+</LinearLayout>
