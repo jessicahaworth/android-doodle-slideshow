@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:id="@+id/colorDialogLinearLayout" 
+   android:layout_width="match_parent" android:minWidth="300dp"
+   android:layout_height="match_parent" android:orientation="vertical">
+
+   <TableLayout android:id="@+id/tableLayout"
+      android:layout_width="match_parent" 
+      android:layout_height="wrap_content" android:layout_margin="10dp"
+      android:stretchColumns="1">
+      <TableRow android:orientation="horizontal"
+         android:layout_width="match_parent" 
+         android:layout_height="wrap_content">
+         <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_alpha" android:gravity="right"
+            android:layout_gravity="center_vertical"/>
+         <SeekBar android:id="@+id/alphaSeekBar"
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" android:max="255" 
+            android:paddingLeft="10dp" android:paddingRight="10dp"/>
+      </TableRow>
+      <TableRow android:orientation="horizontal"
+         android:layout_width="match_parent" 
+         android:layout_height="wrap_content">
+         <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="@string/label_red" android:gravity="right"
+            android:layout_gravity="center_vertical"/>
+         <SeekBar android:id="@+id/redSeekBar"
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" android:max="255" 
+            android:paddingLeft="10dp" android:paddingRight="10dp"/>
+      </TableRow>
+      <TableRow android:orientation="horizontal"
+         android:layout_width="match_parent" 
+         android:layout_height="wrap_content">
+         <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="@string/label_green" android:gravity="right"
+            android:layout_gravity="center_vertical"/>
+         <SeekBar android:id="@+id/greenSeekBar"
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" android:max="255" 
+            android:paddingLeft="10dp" android:paddingRight="10dp"/>
+      </TableRow>
+      <TableRow android:orientation="horizontal"
+         android:layout_width="wrap_content" 
+         android:layout_height="wrap_content">
+         <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:text="@string/label_blue" android:gravity="right"
+            android:layout_gravity="center_vertical"/>
+         <SeekBar android:id="@+id/blueSeekBar"
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" android:max="255" 
+            android:paddingLeft="10dp" android:paddingRight="10dp"/>
+      </TableRow>
+   </TableLayout>
+
+   <LinearLayout android:background="@android:color/white"
+      android:layout_width="match_parent" 
+      android:layout_height="wrap_content" android:layout_margin="10dp">
+      <View android:id="@+id/colorView"
+         android:layout_width="match_parent" 
+         android:layout_height="30dp"/>
+   </LinearLayout>
+   
+   <Button android:id="@+id/setColorButton"
+      android:layout_width="wrap_content" 
+      android:layout_height="wrap_content"  
+      android:layout_gravity="center_horizontal"
+      android:text="@string/button_set_color"/>
+</LinearLayout>
+
+<!-- 
+/**************************************************************************
+ * (C) Copyright 1992-2012 by Deitel & Associates, Inc. and               *
+ * Pearson Education, Inc. All Rights Reserved.                           *
+ *                                                                        *
+ * DISCLAIMER: The authors and publisher of this book have used their     *
+ * best efforts in preparing the book. These efforts include the          *
+ * development, research, and testing of the theories and programs        *
+ * to determine their effectiveness. The authors and publisher make       *
+ * no warranty of any kind, expressed or implied, with regard to these    *
+ * programs or to the documentation contained in these books. The authors *
+ * and publisher shall not be liable in any event for incidental or       *
+ * consequential damages in connection with, or arising out of, the       *
+ * furnishing, performance, or use of these programs.                     *
+ **************************************************************************/
+ -->

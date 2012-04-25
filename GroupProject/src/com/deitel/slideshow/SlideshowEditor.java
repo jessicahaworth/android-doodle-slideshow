@@ -107,12 +107,16 @@ public class SlideshowEditor extends ListActivity {
 		// launch music choosing activity
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-			intent.setType("audio/*");
-			startActivityForResult(
-					Intent.createChooser(intent,
-							getResources().getText(R.string.chooser_music)),
-					MUSIC_ID);
+			// TODO
+			Intent intent = new Intent(v.getContext(), Doodlz.class);
+			startActivity(intent);
+			finish();
+			// Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+			// intent.setType("audio/*");
+			// startActivityForResult(
+			// Intent.createChooser(intent,
+			// getResources().getText(R.string.chooser_music)),
+			// MUSIC_ID);
 		} // end method onClick
 	}; // end OnClickListener addMusicButtonListener
 
