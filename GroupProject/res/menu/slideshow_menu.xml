@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+   <item android:id="@+id/newSlideshowItem"
+      android:title="@string/menuitem_new_slideshow" 
+      android:icon="@drawable/ic_menu_slideshow"
+      android:titleCondensed="@string/menuitem_new_slideshow"
+      android:alphabeticShortcut="n"></item>
+</menu>

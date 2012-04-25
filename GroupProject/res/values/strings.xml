@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello">Hello World, GroupProjectActivity!</string>
-    <string name="app_name">GroupProject</string>
-
+   <string name="app_name">Slideshow</string>
+   <string name="slideshow_editor">Slideshow Editor</string>
+   <string name="welcome_message_title">Welcome to Slideshow</string>
+   <string name="welcome_message">To create a new slideshow, touch the menu button on your device.</string>
+   <string name="dialog_confirm_delete">Are You Sure?</string>
+   <string name="dialog_confirm_delete_message">This will permanently delete the slideshow</string>
+   <string name="menuitem_new_slideshow">New Slideshow</string>
+   <string name="menuitem_color">Color</string>
+   <string name="menuitem_sepia">Sepia</string>
+   <string name="menuitem_negative">Negative</string>
+   <string name="button_set_slideshow_name">Set Name</string>
+   <string name="button_ok">OK</string>
+   <string name="button_cancel">Cancel</string>
+   <string name="button_edit">Edit</string>
+   <string name="button_play">Play</string>
+   <string name="button_add_picture">Add Picture</string>   
+   <string name="button_take_picture">Take Picture</string>   
+   <string name="button_add_music">Add Music</string>   
+   <string name="button_add_video">Add Video</string>   
+   <string name="button_done">Done</string>   
+   <string name="button_delete">Delete</string>
+   <string name="dialog_set_name_title">Set Slideshow Name</string>
+   <string name="dialog_enter_name_message">
+      Enter a name for your slideshow</string>
+   <string name="message_error_saving">
+      There was an error saving the image</string>
+   <string name="message_saved">
+      Your image has been saved to the Gallery</string>
+   <string name="message_name">
+      Slideshow not created. Each slideshow must have a name.</string>
+   <string name="message_error_reading">
+      Error reading from file. Slideshows not loaded.</string>
+   <string name="message_error_writing">
+      Error writing to file. Slideshows not saved.</string>
+   <string name="chooser_image">Select image</string>
+   <string name="chooser_video">Select video</string>
+   <string name="chooser_music">Select music</string>
 </resources>

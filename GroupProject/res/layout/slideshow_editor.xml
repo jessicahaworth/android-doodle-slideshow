@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:id="@+id/editorLinearLayout" 
+   android:layout_width="match_parent"
+   android:layout_height="match_parent" android:orientation="vertical" 
+   android:background="@android:color/white">
+   <LinearLayout android:id="@+id/buttonLinearLayout"
+      android:layout_margin="5dp" android:layout_width="match_parent" 
+      android:layout_height="wrap_content">
+      <Button android:id="@+id/doneButton" 
+         android:layout_width="wrap_content"
+         android:layout_height="match_parent" android:layout_weight="1"
+         android:drawableTop="@drawable/ic_menu_back"
+         android:text="@string/button_done"></Button>
+      <Button android:id="@+id/addPictureButton"
+         android:layout_width="wrap_content"
+         android:layout_height="match_parent" android:layout_weight="1"
+         android:drawableTop="@drawable/ic_menu_gallery"
+         android:text="@string/button_add_picture"></Button>
+      <Button android:id="@+id/addMusicButton"
+         android:layout_width="wrap_content"
+         android:layout_height="match_parent" android:layout_weight="1"
+         android:drawableTop="@drawable/ic_menu_add"
+         android:text="@string/button_add_music"></Button>
+      <Button android:id="@+id/playButton"
+         android:layout_width="wrap_content"
+         android:layout_height="match_parent" android:layout_weight="1"
+         android:drawableTop="@drawable/ic_menu_play_clip"
+         android:text="@string/button_play"></Button>
+   </LinearLayout>
+   <ListView android:id="@android:id/list"
+      android:layout_margin="5dp" android:layout_width="match_parent" 
+      android:layout_height="match_parent" android:layout_weight="1">
+   </ListView>
+</LinearLayout>
