@@ -17,7 +17,7 @@
    <string name="button_play">Play</string>
    <string name="button_add_picture">Add Picture</string>   
    <string name="button_take_picture">Take Picture</string>   
-   <string name="button_add_drawing">Add Drawing</string>   
+   <string name="button_add_drawing">Add New Drawing</string>   
    <string name="button_add_video">Add Video</string>   
    <string name="button_done">Done</string>   
    <string name="button_delete">Delete</string>

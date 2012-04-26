@@ -57,6 +57,13 @@ public class DoodleView extends View {
 		bitmap = Bitmap.createBitmap(getWidth(), getHeight(),
 				Bitmap.Config.ARGB_8888);
 		bitmapCanvas = new Canvas(bitmap);
+
+		// potential code to load a background image
+		// Bitmap bMap = BitmapFactory.decodeFile("/sdcard/9FCvE.jpg").copy(
+		// Bitmap.Config.ARGB_8888, true);
+		// if (bMap.isMutable())
+		// bitmapCanvas.setBitmap(bMap);
+
 		bitmap.eraseColor(Color.WHITE); // erase the BitMap with white
 	} // end method onSizeChanged
 

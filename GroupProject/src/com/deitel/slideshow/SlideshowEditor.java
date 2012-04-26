@@ -94,6 +94,9 @@ public class SlideshowEditor extends ListActivity {
 		// launch image choosing activity
 		@Override
 		public void onClick(View v) {
+			// MUST do the broadcast below
+			// so the phone rescans the SD directory
+			// otherwise if won't find any new drawings
 			sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED,
 					Uri.parse("file://"
 							+ Environment.getExternalStorageDirectory())));
@@ -111,7 +114,6 @@ public class SlideshowEditor extends ListActivity {
 		// launch music choosing activity
 		@Override
 		public void onClick(View v) {
-			// TODO
 			Intent intent = new Intent(v.getContext(), Doodlz.class);
 			startActivity(intent);
 			finish();
