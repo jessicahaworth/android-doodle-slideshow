@@ -9,6 +9,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -216,7 +217,13 @@ public class Doodlz extends Activity
             return true; // consume the menu event
          case SAVE_MENU_ID:     
             doodleView.saveImage(); // save the current images
-            return true; // consume the menu event
+			
+			Intent resultIntent = new Intent();
+			resultIntent.putExtra("NewDrawing", doodleView.saveURI.toString());
+			resultIntent.setData(doodleView.saveURI);
+			setResult(Activity.RESULT_OK, resultIntent);
+			finish();
+			//return true; // consume the menu event
       } // end switch
       
       return super.onOptionsItemSelected(item); // call super's method
