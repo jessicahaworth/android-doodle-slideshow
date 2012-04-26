@@ -75,8 +75,15 @@ public class SlideshowEditor extends ListActivity {
 				// refresh the ListView
 				slideshowEditorAdapter.notifyDataSetChanged();
 			} // end if
-			else if (requestCode == MUSIC_ID) // Activity returns music
-				slideshow.setMusicPath(selectedUri.toString());
+			else if (requestCode == MUSIC_ID)  // Activity returns music
+			{
+				// add new image path to the slideshow
+				String uriNew = data.getStringExtra("NewDrawing");
+				slideshow.addImage(uriNew);
+
+				// refresh the ListView
+				slideshowEditorAdapter.notifyDataSetChanged();
+			}
 		} // end if
 	} // end method onActivityResult
 
@@ -115,8 +122,8 @@ public class SlideshowEditor extends ListActivity {
 		@Override
 		public void onClick(View v) {
 			Intent intent = new Intent(v.getContext(), Doodlz.class);
-			startActivity(intent);
-			finish();
+			startActivityForResult(
+					intent, MUSIC_ID);
 			// Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 			// intent.setType("audio/*");
 			// startActivityForResult(

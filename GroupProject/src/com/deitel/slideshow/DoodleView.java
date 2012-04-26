@@ -6,8 +6,10 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -33,6 +35,8 @@ public class DoodleView extends View {
 	private Paint paintLine; // used to draw lines onto bitmap
 	private HashMap<Integer, Path> pathMap; // current Paths being drawn
 	private HashMap<Integer, Point> previousPointMap; // current Points
+
+	public Uri saveURI;
 
 	// DoodleView constructor initializes the DoodleView
 	public DoodleView(Context context, AttributeSet attrs) {
@@ -214,6 +218,8 @@ public class DoodleView extends View {
 		// get a Uri for the location to save the file
 		Uri uri = getContext().getContentResolver().insert(
 				Images.Media.EXTERNAL_CONTENT_URI, values);
+		saveURI = uri;
+		
 
 		try {
 			// get an OutputStream to uri
@@ -233,6 +239,7 @@ public class DoodleView extends View {
 			message.setGravity(Gravity.CENTER, message.getXOffset() / 2,
 					message.getYOffset() / 2);
 			message.show(); // display the Toast
+			
 		} // end try
 		catch (IOException ex) {
 			// display a message indicating that the image was saved
