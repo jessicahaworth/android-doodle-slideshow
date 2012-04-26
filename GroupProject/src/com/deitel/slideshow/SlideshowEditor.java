@@ -12,6 +12,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -100,6 +101,9 @@ public class SlideshowEditor extends ListActivity {
 		// launch image choosing activity
 		@Override
 		public void onClick(View v) {
+			sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED,
+					Uri.parse("file://"
+							+ Environment.getExternalStorageDirectory())));
 			Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 			intent.setType("image/*");
 			startActivityForResult(
