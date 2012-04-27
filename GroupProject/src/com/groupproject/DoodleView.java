@@ -9,6 +9,7 @@ import java.util.HashMap;
 import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -36,6 +37,8 @@ public class DoodleView extends View {
 
 	public Uri saveURI;
 
+	private Bitmap bMap;
+
 	// DoodleView constructor initializes the DoodleView
 	public DoodleView(Context context, AttributeSet attrs) {
 		super(context, attrs); // pass context to View's constructor
@@ -58,15 +61,20 @@ public class DoodleView extends View {
 	public void onSizeChanged(int w, int h, int oldW, int oldH) {
 		bitmap = Bitmap.createBitmap(getWidth(), getHeight(),
 				Bitmap.Config.ARGB_8888);
-		bitmapCanvas = new Canvas(bitmap);
+		// bitmapCanvas = new Canvas(bitmap);
 
 		// potential code to load a background image
-		// Bitmap bMap = BitmapFactory.decodeFile("/sdcard/9FCvE.jpg").copy(
-		// Bitmap.Config.ARGB_8888, true);
+		bMap = BitmapFactory
+				.decodeFile("/sdcard/DCIM/Camera/1335401735175.jpg").copy(
+						Bitmap.Config.ARGB_8888, true);
+		bitmap = bMap;
 		// if (bMap.isMutable())
-		// bitmapCanvas.setBitmap(bMap);
+		bitmapCanvas = new Canvas(bitmap);
 
-		bitmap.eraseColor(Color.WHITE); // erase the BitMap with white
+		// bitmapCanvas.drawBitmap(bMap, 0f, 0f, null);
+
+		// bitmap.eraseColor(Color.WHITE); // erase the BitMap with white
+		bitmap = bMap;
 	} // end method onSizeChanged
 
 	// clear the painting
