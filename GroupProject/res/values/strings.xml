@@ -52,5 +52,8 @@
     <string name="message_erase">Erase the drawing?</string>
     <string name="title_color_dialog">Choose Color</string>
     <string name="title_line_width_dialog">Choose Line Width</string>
+    <string name="share">Share</string>
+    <string name="slideshow_subject">Here\'s my slideshow</string>
+    <string name="slideshow_msg">Check out my slideshow created in Slideshow Doodler</string>
 </resources>
 

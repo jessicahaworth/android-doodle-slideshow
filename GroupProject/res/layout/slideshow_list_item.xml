@@ -21,17 +21,22 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent" 
             android:text="@string/button_play"
-            android:drawableTop="@drawable/ic_menu_play_clip"></Button>
+            android:drawableTop="@drawable/ic_menu_play_clip" android:textSize="12sp"></Button>
          <Button android:id="@+id/editButton" android:layout_weight="1"
             android:layout_width="wrap_content" 
             android:layout_height="match_parent"
             android:text="@string/button_edit"
-            android:drawableTop="@drawable/ic_menu_edit"></Button>
+            android:drawableTop="@drawable/ic_menu_edit" android:textSize="12sp"></Button>
+         <Button android:id="@+id/shareButton" android:layout_weight="1"
+            android:layout_width="wrap_content" 
+            android:layout_height="match_parent"
+            android:text="@string/share"
+            android:drawableTop="@drawable/ic_menu_share" android:textSize="12sp"></Button>
          <Button android:id="@+id/deleteButton" android:layout_weight="1"
             android:layout_width="wrap_content" 
             android:layout_height="match_parent"
             android:text="@string/button_delete"
-            android:drawableTop="@drawable/ic_menu_delete"></Button>
+            android:drawableTop="@drawable/ic_menu_delete" android:textSize="12sp"></Button>
       </LinearLayout>
    </LinearLayout>
 </LinearLayout>
