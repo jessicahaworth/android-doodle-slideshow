@@ -2,7 +2,9 @@
 // Main View for the Doodlz app.
 package com.groupproject;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
 
@@ -18,6 +20,7 @@ import android.graphics.Point;
 import android.net.Uri;
 import android.provider.MediaStore.Images;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -59,12 +62,8 @@ public class DoodleView extends View {
 	private Bitmap bMap;
 
 	// DoodleView constructor initializes the DoodleView
-	public DoodleView(Context context, AttributeSet attrs, Boolean isOverlay,
-			String uri) {
+	public DoodleView(Context context, AttributeSet attrs) {
 		super(context, attrs); // pass context to View's constructor
-
-		this.isOverlay = isOverlay;
-		this.uri = uri;
 
 		paintScreen = new Paint(); // used to display bitmap onto screen
 
@@ -86,12 +85,26 @@ public class DoodleView extends View {
 				Bitmap.Config.ARGB_8888);
 		// bitmapCanvas = new Canvas(bitmap);
 
-		if (isOverlay) {
+		Log.d("lol", "uri is" + uri);
+
+		Log.d("lol", "iOVerlay	 is" + isOverlay);
+
+		if (isOverlay && uri != null) {
+			Uri uri2 = Uri.parse(uri);
+			Log.d("lol", "uri2 is" + uri2.toString());
+			InputStream is = null;
 			// .decodeFile("/sdcard/DCIM/Camera/1335401735175.jpg").copy(
-			bMap = BitmapFactory.decodeFile(uri).copy(Bitmap.Config.ARGB_8888,
+			try {
+				is = getContext().getContentResolver().openInputStream(uri2);
+			} catch (FileNotFoundException e) {
+				Log.d("oops", "the file was not found");
+				isOverlay = false;
+			}
+			bMap = BitmapFactory.decodeStream(is).copy(Bitmap.Config.ARGB_8888,
 					true);
 			bitmap = bMap;
-		}
+		} else
+			Log.d("lol", "uri is" + uri);
 
 		// potential code to load a background image
 		// bMap = BitmapFactory
