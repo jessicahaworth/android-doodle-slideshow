@@ -28,6 +28,8 @@
       There was an error saving the image</string>
    <string name="message_saved">
       Your image has been saved to the Gallery</string>
+       <string name="message_added">
+      Your image has been added to the slideshow</string>
    <string name="message_name">
       Slideshow not created. Each slideshow must have a name.</string>
    <string name="message_error_reading">

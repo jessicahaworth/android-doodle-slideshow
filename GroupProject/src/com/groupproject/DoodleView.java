@@ -232,10 +232,17 @@ public class DoodleView extends View {
 			// flush and close the OutputStream
 			outStream.flush(); // empty the buffer
 			outStream.close(); // close the stream
+			Toast message = Toast
+					.makeText(getContext(), "", Toast.LENGTH_SHORT);
+			if (saved) {
+				// display a message indicating that the image was saved
+				message = Toast.makeText(getContext(), R.string.message_saved,
+						Toast.LENGTH_SHORT);
 
-			// display a message indicating that the image was saved
-			Toast message = Toast.makeText(getContext(),
-					R.string.message_saved, Toast.LENGTH_SHORT);
+			} else {
+				message = Toast.makeText(getContext(), R.string.message_added,
+						Toast.LENGTH_SHORT);
+			}
 			message.setGravity(Gravity.CENTER, message.getXOffset() / 2,
 					message.getYOffset() / 2);
 			message.show(); // display the Toast
