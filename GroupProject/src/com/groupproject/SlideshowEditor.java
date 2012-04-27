@@ -43,6 +43,9 @@ public class SlideshowEditor extends ListActivity {
 		Button addPictureButton = (Button) findViewById(R.id.addPictureButton);
 		addPictureButton.setOnClickListener(addPictureButtonListener);
 
+		Button editPictureButton = (Button) findViewById(R.id.editPictureButton);
+		editPictureButton.setOnClickListener(editPictureButtonListener);
+
 		Button addDrawingButton = (Button) findViewById(R.id.addDrawingButton);
 		addDrawingButton.setOnClickListener(addDrawingButtonListener);
 
@@ -57,7 +60,8 @@ public class SlideshowEditor extends ListActivity {
 
 	// set IDs for each type of media result
 	private static final int PICTURE_ID = 1;
-	private static final int MUSIC_ID = 2;
+	private static final int DRAWING_ID = 2;
+	protected static final int EDIT_PICTURE_ID = 3;
 
 	// called when an Activity launched from this Activity returns
 	@Override
@@ -75,7 +79,7 @@ public class SlideshowEditor extends ListActivity {
 				// refresh the ListView
 				slideshowEditorAdapter.notifyDataSetChanged();
 			} // end if
-			else if (requestCode == MUSIC_ID)  // Activity returns music
+			else if (requestCode == DRAWING_ID)  // Activity returns music
 			{
 				// add new image path to the slideshow
 				String uriNew = data.getStringExtra("NewDrawing");
@@ -83,6 +87,13 @@ public class SlideshowEditor extends ListActivity {
 
 				// refresh the ListView
 				slideshowEditorAdapter.notifyDataSetChanged();
+			}
+			else if (requestCode == EDIT_PICTURE_ID)  // Activity returns music
+			{
+				Intent intent = new Intent(this, Doodlz.class);
+				intent.putExtra("uri", selectedUri.toString());
+				startActivityForResult(
+						intent, DRAWING_ID);
 			}
 		} // end if
 	} // end method onActivityResult
@@ -113,15 +124,34 @@ public class SlideshowEditor extends ListActivity {
 		} // end method onClick
 	}; // end OnClickListener addPictureButtonListener
 
-	// called when the user touches the "Add Music" Button
+
+	// called when the user touches the "Add Picture" Button
+	private OnClickListener editPictureButtonListener = new OnClickListener() {
+		// launch image choosing activity
+			@Override
+			public void onClick(View v) {
+				sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED,
+						Uri.parse("file://"
+								+ Environment.getExternalStorageDirectory())));
+				Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+				intent.setType("image/*");
+				startActivityForResult(
+						Intent.createChooser(intent,
+								getResources().getText(R.string.chooser_image)),
+						EDIT_PICTURE_ID);
+		} // end method onClick
+	}; // end OnClickListener addPictureButtonListener
+	
+	// called when the user touches the "Draw on Picture" Button
 	private OnClickListener addDrawingButtonListener = new OnClickListener() {
 		// launch music choosing activity
 		@Override
 		public void onClick(View v) {
 			// TODO
 			Intent intent = new Intent(v.getContext(), Doodlz.class);
+			intent.putExtra("uri", "none");
 			startActivityForResult(
-					intent, MUSIC_ID);
+					intent, DRAWING_ID);
 			// Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 			// intent.setType("audio/*");
 			// startActivityForResult(
@@ -129,7 +159,7 @@ public class SlideshowEditor extends ListActivity {
 			// getResources().getText(R.string.chooser_music)),
 			// MUSIC_ID);
 		} // end method onClick
-	}; // end OnClickListener addMusicButtonListener
+	}; // end OnClickListener addDrawingButtonListener
 
 	// called when the user touches the "Play" Button
 	private OnClickListener playButtonListener = new OnClickListener() {

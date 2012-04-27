@@ -6,30 +6,53 @@
    <LinearLayout android:id="@+id/buttonLinearLayout"
       android:layout_margin="5dp" android:layout_width="match_parent" 
       android:layout_height="wrap_content">
-      <Button android:id="@+id/doneButton" 
-         android:layout_width="wrap_content"
-         android:layout_height="match_parent" android:layout_weight="1"
-         android:drawableTop="@drawable/ic_menu_back"
-         android:text="@string/button_done"></Button>
-      <Button android:id="@+id/addPictureButton"
-         android:layout_width="wrap_content"
-         android:layout_height="match_parent" android:layout_weight="1"
-         android:drawableTop="@drawable/ic_menu_gallery"
-         android:text="@string/button_add_picture"></Button>
 
       <Button
-          android:id="@+id/addDrawingButton"
-          android:layout_width="94dp"
-          android:layout_height="match_parent"
-          android:drawableTop="@drawable/ic_menu_add"
-          android:text="@string/button_add_drawing" >
+          android:id="@+id/doneButton"
+          android:layout_width="52dp"
+          android:layout_height="fill_parent"
+          android:drawableTop="@drawable/ic_menu_back"
+          android:text="@string/button_done"
+          android:textSize="10sp" >
 
 </Button>
-      <Button android:id="@+id/playButton"
-         android:layout_width="wrap_content"
-         android:layout_height="match_parent" android:layout_weight="1"
-         android:drawableTop="@drawable/ic_menu_play_clip"
-         android:text="@string/button_play"></Button>
+
+      <Button
+          android:id="@+id/addPictureButton"
+          android:layout_width="58dp"
+          android:layout_height="wrap_content"
+          android:drawableTop="@drawable/ic_menu_gallery"
+          android:text="@string/button_add_picture"
+          android:textSize="10sp" >
+
+</Button>
+
+      <Button
+          android:id="@+id/editPictureButton"
+          android:layout_width="70dp"
+          android:layout_height="wrap_content"
+          android:drawableTop="@drawable/ic_menu_edit"
+          android:text="@string/editPicture"
+          android:textSize="10sp" />
+
+      <Button
+          android:id="@+id/addDrawingButton"
+          android:layout_width="66dp"
+          android:layout_height="wrap_content"
+          android:drawableTop="@drawable/ic_menu_add"
+          android:text="@string/button_add_drawing"
+          android:textSize="10sp" >
+
+</Button>
+
+      <Button
+          android:id="@+id/playButton"
+          android:layout_width="54dp"
+          android:layout_height="match_parent"
+          android:drawableTop="@drawable/ic_menu_play_clip"
+          android:text="@string/button_play"
+          android:textSize="10sp" >
+</Button>
    </LinearLayout>
    <ListView android:id="@android:id/list"
       android:layout_margin="5dp" android:layout_width="match_parent" 

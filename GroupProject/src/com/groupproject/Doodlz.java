@@ -59,6 +59,16 @@ public class Doodlz extends Activity {
 		// get reference to the DoodleView
 		doodleView = (DoodleView) findViewById(R.id.doodleView);
 
+		
+		Intent i = getIntent();
+		String s = i.getStringExtra("uri");
+		if (s.equals("none"))
+			doodleView.setIsOverlay(false);
+		else {
+			doodleView.setUri(s);
+			doodleView.setIsOverlay(true);
+		}
+		
 		// initialize acceleration values
 		acceleration = 0.00f;
 		currentAcceleration = SensorManager.GRAVITY_EARTH;
