@@ -119,6 +119,8 @@ public class DoodleView extends View {
 		// bitmap.eraseColor(Color.WHITE); // erase the BitMap with white
 		if (isOverlay)
 			bitmap = bMap;
+		else
+			bitmap.eraseColor(Color.WHITE); // erase the BitMap with white
 	} // end method onSizeChanged
 
 	// clear the painting

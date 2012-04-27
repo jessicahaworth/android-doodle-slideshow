@@ -35,6 +35,7 @@ public class Doodlz extends Activity {
 	private float currentAcceleration; // current acceleration
 	private float lastAcceleration; // last acceleration
 	private AtomicBoolean dialogIsVisible = new AtomicBoolean(); // false
+	private Boolean isOverlay = false;
 
 	// create menu ids for each menu option
 	private static final int COLOR_MENU_ID = Menu.FIRST;
@@ -61,11 +62,13 @@ public class Doodlz extends Activity {
 
 		Intent i = getIntent();
 		String s = i.getStringExtra("uri");
-		if (s.equals("none"))
+		if (s.equals("none")) {
 			doodleView.setIsOverlay(false);
-		else {
+			isOverlay = false;
+		} else {
 			doodleView.setUri(s);
 			doodleView.setIsOverlay(true);
+			isOverlay = true;
 		}
 
 		// initialize acceleration values
