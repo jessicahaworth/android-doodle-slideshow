@@ -34,14 +34,37 @@ public class DoodleView extends View {
 	private Paint paintLine; // used to draw lines onto bitmap
 	private HashMap<Integer, Path> pathMap; // current Paths being drawn
 	private HashMap<Integer, Point> previousPointMap; // current Points
+	private String uri = "";
+
+	public String getUri() {
+		return uri;
+	}
+
+	public void setUri(String uri) {
+		this.uri = uri;
+	}
+
+	public Boolean getIsOverlay() {
+		return isOverlay;
+	}
+
+	public void setIsOverlay(Boolean isOverlay) {
+		this.isOverlay = isOverlay;
+	}
+
+	private Boolean isOverlay;
 
 	public Uri saveURI;
 
 	private Bitmap bMap;
 
 	// DoodleView constructor initializes the DoodleView
-	public DoodleView(Context context, AttributeSet attrs) {
+	public DoodleView(Context context, AttributeSet attrs, Boolean isOverlay,
+			String uri) {
 		super(context, attrs); // pass context to View's constructor
+
+		this.isOverlay = isOverlay;
+		this.uri = uri;
 
 		paintScreen = new Paint(); // used to display bitmap onto screen
 
@@ -63,18 +86,26 @@ public class DoodleView extends View {
 				Bitmap.Config.ARGB_8888);
 		// bitmapCanvas = new Canvas(bitmap);
 
+		if (isOverlay) {
+			// .decodeFile("/sdcard/DCIM/Camera/1335401735175.jpg").copy(
+			bMap = BitmapFactory.decodeFile(uri).copy(Bitmap.Config.ARGB_8888,
+					true);
+			bitmap = bMap;
+		}
+
 		// potential code to load a background image
-		bMap = BitmapFactory
-				.decodeFile("/sdcard/DCIM/Camera/1335401735175.jpg").copy(
-						Bitmap.Config.ARGB_8888, true);
-		bitmap = bMap;
+		// bMap = BitmapFactory
+		// .decodeFile("/sdcard/DCIM/Camera/1335401735175.jpg").copy(
+		// Bitmap.Config.ARGB_8888, true);
+		// bitmap = bMap;
 		// if (bMap.isMutable())
 		bitmapCanvas = new Canvas(bitmap);
 
 		// bitmapCanvas.drawBitmap(bMap, 0f, 0f, null);
 
 		// bitmap.eraseColor(Color.WHITE); // erase the BitMap with white
-		bitmap = bMap;
+		if (isOverlay)
+			bitmap = bMap;
 	} // end method onSizeChanged
 
 	// clear the painting
