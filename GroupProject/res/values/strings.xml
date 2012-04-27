@@ -17,7 +17,7 @@
    <string name="button_play">Play</string>
    <string name="button_add_picture">Add Picture</string>   
    <string name="button_take_picture">Take Picture</string>   
-   <string name="button_add_drawing">Add Drawing</string>   
+   <string name="button_add_drawing">Add New Drawing</string>   
    <string name="button_add_video">Add Video</string>   
    <string name="button_done">Done</string>   
    <string name="button_delete">Delete</string>
@@ -47,7 +47,8 @@
     <string name="menuitem_clear">Clear</string>
     <string name="menuitem_erase">Erase</string>
     <string name="menuitem_line_width">Line Width</string>
-    <string name="menuitem_save_image">Save Image</string>
+    <string name="menuitem_save_image">Save Progress</string>
+    <string name="menuitem_add_image">Add Image</string>
     <string name="message_erase">Erase the drawing?</string>
     <string name="title_color_dialog">Choose Color</string>
     <string name="title_line_width_dialog">Choose Line Width</string>
