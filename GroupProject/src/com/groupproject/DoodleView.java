@@ -6,12 +6,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
 
-
-
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -63,6 +59,13 @@ public class DoodleView extends View {
 		bitmap = Bitmap.createBitmap(getWidth(), getHeight(),
 				Bitmap.Config.ARGB_8888);
 		bitmapCanvas = new Canvas(bitmap);
+
+		// potential code to load a background image
+		// Bitmap bMap = BitmapFactory.decodeFile("/sdcard/9FCvE.jpg").copy(
+		// Bitmap.Config.ARGB_8888, true);
+		// if (bMap.isMutable())
+		// bitmapCanvas.setBitmap(bMap);
+
 		bitmap.eraseColor(Color.WHITE); // erase the BitMap with white
 	} // end method onSizeChanged
 
@@ -200,7 +203,10 @@ public class DoodleView extends View {
 	} // end method touch_ended
 
 	// save the current image to the Gallery
-	public void saveImage() {
+	// "saved" means that it's just being saved
+	// false means that we're hacking this to add it to the gallery
+	// and silently save
+	public void saveImage(Boolean saved) {
 		// use "Doodlz" followed by current time as the image file name
 		String fileName = "Doodlz" + System.currentTimeMillis();
 
@@ -214,7 +220,6 @@ public class DoodleView extends View {
 		Uri uri = getContext().getContentResolver().insert(
 				Images.Media.EXTERNAL_CONTENT_URI, values);
 		saveURI = uri;
-		
 
 		try {
 			// get an OutputStream to uri
@@ -234,7 +239,7 @@ public class DoodleView extends View {
 			message.setGravity(Gravity.CENTER, message.getXOffset() / 2,
 					message.getYOffset() / 2);
 			message.show(); // display the Toast
-			
+
 		} // end try
 		catch (IOException ex) {
 			// display a message indicating that the image was saved
